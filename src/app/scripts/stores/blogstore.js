@@ -12,7 +12,7 @@ $(document).ajaxError(function(e, jqxhr, settings, exception) {
 function getBlogsFromServer() {
     return Q($.ajax({
         type: "GET",
-        url: 'https://1m3837cydj.execute-api.us-east-1.amazonaws.com/prod
+        url: 'https://1m3837cydj.execute-api.us-east-1.amazonaws.com/prod',
         contentType: "application/json; charset=utf-8",
         dataType: "json"
     }));
