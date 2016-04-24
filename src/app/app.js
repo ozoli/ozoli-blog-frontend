@@ -12,6 +12,9 @@ var Blog = require('./scripts/components/blog.jsx');
 var BlogList = require('./scripts/components/bloglist.jsx');
 var NotFoundPage = require('./scripts/components/404.jsx');
 
+var ga = require('react-ga');
+ga.initialize('UA-69349964-1');
+
 setInterval(function() {
     BlogActions.fetchBlogs();
 }, 150000);
@@ -30,10 +33,13 @@ var Home = React.createClass({
 });
 
 var App = React.createClass({
+    logPageView: function() {
+        ga.pageview(window.location.pathname);
+    },
 
     render: function() {
         return (
-            <Locations hash>
+            <Locations hash onNavigation={this.logPageView}>
                 <Location path="/" handler={Home}/>
                 <Location path="/about" handler={About}/>
                 <Location path="/blog/:blogLinkTitle" handler={Blog}/>
