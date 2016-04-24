@@ -1,0 +1,4 @@
+define([
+	'./todoModel',
+	//'./footer'
+], function () {});

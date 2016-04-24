@@ -36,3 +36,4 @@ build/
 dist/
 
 # Created by .ignore support plugin (hsz.mobi)
+.idea
